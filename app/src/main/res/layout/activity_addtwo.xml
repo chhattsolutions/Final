@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".float_button.Addtwo">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    <RelativeLayout
+        android:id="@+id/inside_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/next_button"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp">
+
+
+        <ImageView
+            android:id="@+id/step_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bartwo" />
+
+
+        <TextView
+            android:id="@+id/category_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/step_two"
+            android:layout_marginTop="30dp"
+            android:text="Category"
+            android:textColor="@color/black" />
+
+
+        <Spinner
+            android:id="@+id/category_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/category_textView"
+            android:background="@drawable/bt_shape"
+            android:spinnerMode="dialog" />
+
+
+        <TextView
+            android:id="@+id/your_cities_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_spinner"
+            android:layout_marginTop="30dp"
+            android:text="City"
+            android:textColor="@color/black" />
+
+        <Spinner
+            android:id="@+id/cities_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/your_cities_textView"
+            android:background="@drawable/bt_shape"
+            android:spinnerMode="dialog"
+            android:text="Location" />
+
+        <TextView
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/your_cities_textView"
+            android:layout_marginTop="70dp"
+            android:text="Location"
+            android:textColor="@color/black" />
+
+        <Spinner
+            android:id="@+id/select_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/select"
+            android:background="@drawable/bt_shape"
+            android:spinnerMode="dialog"
+            android:text="Location" />
+
+        <TextView
+            android:id="@+id/location_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/select_spinner"
+            android:layout_marginTop="30dp"
+            android:text="Location or Project"
+            android:textColor="@color/black" />
+
+
+        <Button
+            android:id="@+id/location_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/location_textView"
+            android:background="@drawable/bt_shape"
+            android:hint="Tap to Select Location" />
+
+
+        <!--<TextView
+            android:id="@+id/landmark_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/location_editText"
+            android:layout_marginTop="30dp"
+            android:text="Landmark"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/landmark_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landmark_textView"
+            android:hint="Enter Near-By Landmark (Optional)"/>-->
+
+
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Next"
+        android:textColor="#FFFFFF" />
+</RelativeLayout>

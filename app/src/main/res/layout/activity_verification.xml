@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Verification">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inside_relative"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Phone Number*"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/view_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text"
+            android:background="@drawable/bt_shape"
+            android:inputType="numberSigned"
+            android:spinnerMode="dialog" />
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_spinner"
+            android:textSize="20dp"
+            android:text="Number of Agents*"
+            android:textColor="@color/black"/>
+        <Spinner
+            android:id="@+id/corner_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/text1" />
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/corner_spinner"
+            android:textSize="20dp"
+            android:text="Company Name*"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/facing_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/text2" />
+       <!-- <Spinner
+            android:id="@+id/floor_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/facing_spinner" />
+
+        <Spinner
+            android:id="@+id/Bathroom_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/floor_spinner" />-->
+    </RelativeLayout>
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"
+        android:text="Done"/>
+</RelativeLayout>

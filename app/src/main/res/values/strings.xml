@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CHHATT       (چھت)</string>
+    <string name="appbar_scrolling_view_behavior">add</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">About</string>
+    <string name="shortlistings">ShortList</string>
+    <string name="follow_ups">Follow Ups</string>
+    <string name="profile">Profile</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="slide_to_cancel">"Slide to cancel"</string>
+</resources>

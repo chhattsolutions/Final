@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".More">
+    <!--ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inside_relative"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp">
+
+    <Spinner
+        android:id="@+id/view_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:spinnerMode="dialog"
+        android:background="@drawable/bt_shape" />
+
+        <Spinner
+            android:id="@+id/corner_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/view_spinner" />
+
+        <Spinner
+            android:id="@+id/facing_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/corner_spinner" />
+        <Spinner
+            android:id="@+id/floor_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/facing_spinner" />
+
+        <Spinner
+            android:id="@+id/Bathroom_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:spinnerMode="dialog"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_shape"
+            android:layout_below="@id/floor_spinner" />
+        <RadioButton
+            android:id="@+id/furnished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Bathroom_spinner"
+            android:layout_marginTop="0dp"
+            android:text="Furnished" />
+
+        <RadioButton
+            android:id="@+id/Servant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/Bathroom_spinner"
+            android:layout_marginTop="0dp"
+            android:text="Servant Quaters" />
+        <RadioButton
+            android:id="@+id/power"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/furnished"
+            android:layout_marginTop="0dp"
+            android:text="Power Backup" />
+        <RadioButton
+            android:id="@+id/Lawn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/furnished"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="0dp"
+            android:text="Lawn/Garden  " />
+        <RadioButton
+            android:id="@+id/Maintaince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/power"
+            android:layout_marginTop="0dp"
+            android:text="Maintenance Staff" />
+        <RadioButton
+            android:id="@+id/Security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/power"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:text="Security Staff  " />
+        <RadioButton
+            android:id="@+id/Parking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Maintaince"
+            android:layout_marginTop="0dp"
+            android:text="Parking Space" />
+
+        <RadioButton
+            android:id="@+id/Lift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/Security"
+            android:layout_marginTop="0dp"
+            android:text="Lift/Elevator    " />
+        <RadioButton
+            android:id="@+id/Throw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Parking"
+            android:layout_marginTop="0dp"
+            android:text="Throw" />
+
+        <RadioButton
+            android:id="@+id/Direct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="0dp"
+            android:layout_below="@+id/Lift"
+            android:layout_marginTop="0dp"
+            android:text="Direct                   " />
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Throw"
+            android:padding="10dp"
+            android:text="Other Details"
+            android:textColor="@color/black" />
+
+
+        <EditText
+            android:id="@+id/landmark_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/comment"
+            android:hint="Other Details"/>
+    </RelativeLayout>
+  <!--  </LinearLayout>-->
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentRight="true" />
+
+
+
+    <!--</ScrollView>-->
+</RelativeLayout>

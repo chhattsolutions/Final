@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".float_button.Addone">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <RelativeLayout
+        android:id="@+id/inside_relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/next_button"
+        android:layout_below="@id/toolbar"
+        android:padding="16dp">
+
+        <!--<TextView
+            android:id="@+id/step_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />-->
+
+        <ImageView
+            android:id="@+id/step_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/barone" />
+
+
+        <TextView
+            android:id="@+id/list_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/step_one"
+            android:layout_marginTop="30dp"
+            android:text="I Want To List"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/relinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_textView"
+            android:weightSum="2">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="@android:color/background_light">
+
+                <ImageView
+                    android:id="@+id/Inventory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    app:srcCompat="@drawable/inventory" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="@android:color/background_light">
+
+                <ImageView
+                    android:id="@+id/Requirement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/requirement" />
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/property_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relinear"
+            android:layout_marginTop="30dp"
+            android:text="Property Type"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:id="@+id/relinear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/property_textView"
+            android:weightSum="3">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/Residential"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/residential" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/commerical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/commercial" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/industrial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/industrial" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/for_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relinear1"
+            android:layout_marginTop="30dp"
+            android:text="For"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:id="@+id/relinear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/for_textView"
+            android:weightSum="3">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/sale"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/sale" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+                <ImageView
+                    android:id="@+id/lease"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/rent" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/selector_bg_edit"
+                app:cardBackgroundColor="?attr/colorBackgroundFloating">
+
+
+                <ImageView
+                    android:id="@+id/booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/selector_bg_edit"
+                    app:srcCompat="@drawable/booking" />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF" />
+    <!--<Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/txtnext"
+            android:layout_width="match_parent"
+            android:layout_heigth="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </Button>-->
+</RelativeLayout>
