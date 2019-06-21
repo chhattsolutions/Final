@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -37,7 +38,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class profile extends AppCompatActivity {
-    EditText username,Compnayname,phone,email,agent;
+    TextView username,Compnayname,phone,email,agent;
     ImageView profile;
     FirebaseUser fuser;
     DatabaseReference reference,ref;
@@ -47,16 +48,16 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        username=(EditText) findViewById(R.id.view_spinner);
+        username= findViewById(R.id.view_spinner);
         username.setEnabled(false);
         profile=(ImageView) findViewById(R.id.profileimage);
-        email=(EditText)findViewById(R.id.corner_spinner);
+        email=findViewById(R.id.corner_spinner);
         email.setEnabled(false);
-        phone=(EditText)findViewById(R.id.floor_spinner);
+        phone=findViewById(R.id.floor_spinner);
         phone.setEnabled(false);
-        agent=(EditText)findViewById(R.id.agent);
+        agent=findViewById(R.id.agent);
         agent.setEnabled(false);
-        Compnayname=(EditText)findViewById(R.id.facing_spinner) ;
+        Compnayname=findViewById(R.id.facing_spinner) ;
         Compnayname.setEnabled(false);
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

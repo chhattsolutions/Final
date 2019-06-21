@@ -10,4 +10,6 @@
     <string name="profile">Profile</string>
     <string name="title_activity_maps">Map</string>
     <string name="slide_to_cancel">"Slide to cancel"</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="email1">Email</string>
 </resources>
