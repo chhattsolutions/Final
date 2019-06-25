@@ -42,6 +42,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.LogRecord;
 
+import static com.example.afinal.R.drawable.ic_pause;
+
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHolder> {
 
     public static int MSG_TYPE_LEFT=0;
@@ -170,7 +172,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         } else if (!chat.getVoice().equals("default")) {
 
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            viewHolder.btn_play.setText(">");
+            viewHolder.btn_play.setImageResource(R.drawable.ic_play);
             try {
                 mediaPlayer.setDataSource(chat.getVoice());
                 mediaPlayer.prepare();// might take long for buffering.
@@ -205,10 +207,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 public void onClick(View view) {
                     if (!mediaPlayer.isPlaying()) {
                         mediaPlayer.start();
-                        viewHolder.btn_play.setText("||");
+                        viewHolder.btn_play.setImageResource(ic_pause);
+                        //gone play
                     } else {
                         mediaPlayer.pause();
-                        viewHolder.btn_play.setText(">");
+                        viewHolder.btn_play.setImageResource(R.drawable.ic_play);
+                        //gone pause
                     }
                 }
             });
@@ -294,7 +298,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         public CardView message;
         public CardView image, Map_link_card;
         public CardView voicecrd;
-        Button btn_play;
+        ImageButton btn_play;
+        //ImageButton btn_pause;
         TextView tvAudioLength;
         SeekBar seekBar;
         public ImageView Map_icon;
@@ -315,7 +320,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             Map_link_card = itemView.findViewById(R.id.Map_link_card);
             txt_time1 = (TextView) itemView.findViewById(R.id.text_time1);
             txt_time2 = itemView.findViewById(R.id.text_time2);
-            btn_play = (Button) itemView.findViewById(R.id.stop);
+            btn_play = itemView.findViewById(R.id.play);
+            //btn_pause = itemView.findViewById(R.id.pause);
             tvAudioLength = (TextView) itemView.findViewById(R.id.duration);
             seekBar = (SeekBar) itemView.findViewById(R.id.seekBar);
             voicecrd=(CardView) itemView.findViewById(R.id.voic_card);

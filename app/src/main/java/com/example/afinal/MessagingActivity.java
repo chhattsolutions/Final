@@ -961,7 +961,8 @@ cd=new ConnectionDetector(this);
 
                return fileparth.getDownloadUrl();
            }
-       }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+       }).addOnCompleteListener(
+               new OnCompleteListener<Uri>() {
            @Override
            public void onComplete(@NonNull Task<Uri> task) {
                if (task.isSuccessful()) {

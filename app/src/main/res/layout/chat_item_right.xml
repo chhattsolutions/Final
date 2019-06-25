@@ -186,7 +186,7 @@
             app:cardCornerRadius="15dip"
             app:cardElevation="2dp"
             android:id="@+id/voic_card"
-            android:visibility="gone"
+            android:visibility="visible"
             app:cardUseCompatPadding="true"
             android:layout_alignParentRight="true">
 
@@ -196,14 +196,15 @@
                 android:background="@drawable/rounded_corner1"
                 android:weightSum="3">
 
-                <Button
-                    android:id="@+id/stop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageButton
+                    android:id="@+id/play"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
                     android:layout_weight="0.5"
                     android:textSize="20dp"
                     android:background="@drawable/rounded_corner1"
                     android:text=""
+                    android:src="@drawable/ic_play"
                     />
 
                 <SeekBar
