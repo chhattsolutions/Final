@@ -51,7 +51,7 @@ public class profile extends AppCompatActivity {
         username= findViewById(R.id.view_spinner);
         username.setEnabled(false);
         profile=(ImageView) findViewById(R.id.profileimage);
-        email=findViewById(R.id.corner_spinner);
+        email=findViewById(R.id.corner_spinner1);
         email.setEnabled(false);
         phone=findViewById(R.id.floor_spinner);
         phone.setEnabled(false);

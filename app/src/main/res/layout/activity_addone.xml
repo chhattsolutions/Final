@@ -30,21 +30,48 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />-->
 
-        <ImageView
-            android:id="@+id/step_one"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardVew1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/barone" />
+            android:layout_height="70dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="13dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/stepone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"
+                app:spb_currentStateDescriptionColor="@color/colorAccent"
+                app:spb_currentStateNumber="one"
+                app:spb_maxStateNumber="three"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_stateForegroundColor="@color/colorAccent"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee" />
+
+
+
+        </android.support.v7.widget.CardView>
 
 
         <TextView
             android:id="@+id/list_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/step_one"
+            android:layout_below="@id/cardVew1"
             android:layout_marginTop="30dp"
             android:text="I Want To List"
+            android:layout_marginBottom="5dp"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -52,13 +79,14 @@
             android:id="@+id/relinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_below="@+id/list_textView"
             android:weightSum="2">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_weight="1.0"
+                android:layout_weight="2"
                 android:background="@drawable/selector_bg_edit"
                 app:cardBackgroundColor="@android:color/background_light">
 
@@ -66,26 +94,27 @@
                     android:id="@+id/Inventory"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.0"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
                     app:srcCompat="@drawable/inventory" />
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_weight="1.0"
-                android:background="@drawable/selector_bg_edit"
-                app:cardBackgroundColor="@android:color/background_light">
-
-                <ImageView
-                    android:id="@+id/Requirement"
-                    android:layout_width="match_parent"
+                <View
+                    android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.0"
-                    android:background="@drawable/selector_bg_edit"
-                    app:srcCompat="@drawable/requirement" />
+                    android:background="@android:color/darker_gray"/>
 
+                <!--<ImageView-->
+                    <!--android:id="@+id/Requirement"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:layout_weight=""-->
+                    <!--app:srcCompat="@drawable/requirement" />-->
             </android.support.v7.widget.CardView>
+
+
+
+
+
 
 
         </LinearLayout>
@@ -97,6 +126,7 @@
             android:layout_below="@id/relinear"
             android:layout_marginTop="30dp"
             android:text="Property Type"
+            android:layout_marginBottom="5dp"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
@@ -116,7 +146,7 @@
                 app:cardBackgroundColor="?attr/colorBackgroundFloating">
 
                 <ImageView
-                    android:id="@+id/Residential"
+                    android:id  ="@+id/Residential"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1.0"
@@ -163,6 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/relinear1"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
             android:text="For"
             android:textColor="@color/black"
             android:textSize="14sp" />

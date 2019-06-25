@@ -34,7 +34,7 @@ public class More extends AppCompatActivity {
         setSupportActionBar(toolbar);
         view_spinner=(Spinner) findViewById(R.id.view_spinner);
         facing_spinner=(Spinner) findViewById(R.id.facing_spinner);
-        Corner_spinner=(Spinner) findViewById(R.id.corner_spinner);
+        Corner_spinner=(Spinner) findViewById(R.id.corner_spinner1);
         floor_spinner=(Spinner) findViewById(R.id.floor_spinner);
         Bathroom_spiiner=(Spinner) findViewById(R.id.Bathroom_spinner);
         getSupportActionBar().setTitle("Chhatt (چھت)");

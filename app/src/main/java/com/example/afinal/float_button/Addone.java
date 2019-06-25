@@ -33,7 +33,7 @@ public class Addone extends AppCompatActivity {
             }
         });
         iventrory = (ImageView) findViewById(R.id.Inventory);
-        rquirement = (ImageView) findViewById(R.id.Requirement);
+        //rquirement = (ImageView) findViewById(R.id.Requirement);
         idustrial = (ImageView) findViewById(R.id.industrial);
         rsidential = (ImageView) findViewById(R.id.Residential);
         cmmerical = (ImageView) findViewById(R.id.commerical);
@@ -48,7 +48,7 @@ public class Addone extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 iventrory.setImageResource(R.drawable.inventory1);
-                rquirement.setImageResource(R.drawable.requirement);
+                //rquirement.setImageResource(R.drawable.requirement);
                 sle.setImageResource(R.drawable.sale);
                 list = "Inventrory";
 
@@ -59,7 +59,7 @@ public class Addone extends AppCompatActivity {
         rquirement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rquirement.setImageResource(R.drawable.requirement1);
+                //rquirement.setImageResource(R.drawable.requirement1);
                 iventrory.setImageResource(R.drawable.inventory);
                 sle.setImageResource(R.drawable.buy);
                /* hme.setText("Residential");*/
