@@ -187,10 +187,10 @@ public class MessagingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messaging);
         Toolbar toolbar=findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+            setSupportActionBar(toolbar);
             getSupportActionBar().setTitle("");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            cd=new ConnectionDetector(this);
+cd=new ConnectionDetector(this);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -521,7 +521,6 @@ public class MessagingActivity extends AppCompatActivity {
             });
 
     }
-
     private void translateY(float y) {
         if (y < -lockOffset) {
             locked();
@@ -607,7 +606,7 @@ public class MessagingActivity extends AppCompatActivity {
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = " "+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
+                sendMessage(fuser.getUid(),userid,locat);
 
 
             } else  if (location1 != null) {
@@ -620,8 +619,7 @@ public class MessagingActivity extends AppCompatActivity {
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = "http://maps.google.com/maps?"+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
-                //sendMessage(fuser.getUid(),userid,locat);
+                sendMessage(fuser.getUid(),userid,locat);
 
 
 
@@ -635,8 +633,7 @@ public class MessagingActivity extends AppCompatActivity {
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = "http://maps.google.com/maps?"+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
-                //sendMessage(fuser.getUid(),userid,locat);
+                sendMessage(fuser.getUid(),userid,locat);
 
             }else{
 
@@ -964,7 +961,8 @@ public class MessagingActivity extends AppCompatActivity {
 
                return fileparth.getDownloadUrl();
            }
-       }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+       }).addOnCompleteListener(
+               new OnCompleteListener<Uri>() {
            @Override
            public void onComplete(@NonNull Task<Uri> task) {
                if (task.isSuccessful()) {
