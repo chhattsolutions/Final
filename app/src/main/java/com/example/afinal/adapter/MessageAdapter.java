@@ -3,6 +3,8 @@ package com.example.afinal.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.media.AudioManager;
 import android.media.Image;
 import android.media.MediaPlayer;
@@ -39,6 +41,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.LogRecord;
 
@@ -104,14 +107,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 viewHolder.txt_seen.setText("Delivered");
             }
 
-            if (chat.getMessage().contains("http://maps.google.com/maps?"))
+            if (chat.getMessage().contains(" Type = Location"))
             {
                 viewHolder.message.setVisibility(View.GONE);
                 viewHolder.show_message.setVisibility(View.GONE);
                 viewHolder.Map_icon.setVisibility(View.VISIBLE);
                 viewHolder.Map_icon.setImageResource(R.drawable.googlemapicon);
-                String Message = chat.getMessage().replace("http://maps.google.com/maps?","");
-                viewHolder.Map_link.setText(Message);
+                final String[] Message = chat.getMessage().split(",");
+                final String StrLocation = GetExactLocation(Double.parseDouble(Message[0]),Double.parseDouble(Message[1]));
+                viewHolder.Map_link.setText(StrLocation);
                 viewHolder.txt_time2.setText(chat.getTimestamp());
                 if (chat.isIsseen()) {
                     viewHolder.txt_seen2.setText("Seen");
@@ -122,7 +126,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
                 viewHolder.Map_link_card.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(chat.getMessage()));
+                        String uriBegin = "geo:"+Double.parseDouble(Message[0])+","+Double.parseDouble(Message[1]);
+                        String query = Double.parseDouble(Message[0])+","+Double.parseDouble(Message[1]) + "(" + StrLocation + ")";
+                        String encodedQuery = Uri.encode(query);
+                        String uriString = uriBegin + "?q=" + encodedQuery + "&z=16";
+                        Uri uri = Uri.parse(uriString);
+                        Intent i = new Intent(Intent.ACTION_VIEW, uri);
                         i.setPackage("com.google.android.apps.maps");
                         mContext.startActivity(i);
                     }
@@ -345,6 +354,32 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             return MSG_TYPE_LEFT;
         }
 
+    }
+    public String GetExactLocation(double lati, double longi)
+    {
+        String strAdd = "";
+        Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(lati, longi, 1);
+            if (addresses != null) {
+                Address returnedAddress = addresses.get(0);
+                StringBuilder strReturnedAddress = new StringBuilder("");
+
+                for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                }
+                strAdd = strReturnedAddress.toString();
+                Toast.makeText(mContext,"http://maps.google.com/maps?"+strAdd, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(mContext, "Error ", Toast.LENGTH_LONG).show();
+                //Log.w("My Current loction address", "No Address returned!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(mContext, e.toString(), Toast.LENGTH_LONG).show();
+            //Log.w("My Current loction address", "Canont get Address!");
+        }
+        return strAdd;
     }
 
 }

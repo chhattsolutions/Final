@@ -187,10 +187,10 @@ public class MessagingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messaging);
         Toolbar toolbar=findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
             getSupportActionBar().setTitle("");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-cd=new ConnectionDetector(this);
+            cd=new ConnectionDetector(this);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -521,6 +521,7 @@ cd=new ConnectionDetector(this);
             });
 
     }
+
     private void translateY(float y) {
         if (y < -lockOffset) {
             locked();
@@ -606,7 +607,7 @@ cd=new ConnectionDetector(this);
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = " "+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,locat);
+                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
 
 
             } else  if (location1 != null) {
@@ -619,7 +620,8 @@ cd=new ConnectionDetector(this);
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = "http://maps.google.com/maps?"+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,locat);
+                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
+                //sendMessage(fuser.getUid(),userid,locat);
 
 
 
@@ -633,7 +635,8 @@ cd=new ConnectionDetector(this);
                 String locat1 = GetExactLocation(Double.parseDouble(lattitude), Double.parseDouble(longitude));
                 String locat = "http://maps.google.com/maps?"+locat1;
                 //String locat = "http://maps.google.com/maps?"+Double.parseDouble(lattitude)+","+Double.parseDouble(longitude);
-                sendMessage(fuser.getUid(),userid,locat);
+                sendMessage(fuser.getUid(),userid,(lattitude+","+longitude+", Type = Location"));
+                //sendMessage(fuser.getUid(),userid,locat);
 
             }else{
 

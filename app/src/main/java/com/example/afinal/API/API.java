@@ -27,7 +27,7 @@ import java.util.List;
 public class API extends AsyncTask<Void,Void,Void> {
     String  Url ="http://chhatt.com/API/propertymain.php";
     public static List<String> id =new ArrayList<>(), price = new ArrayList<>() ,price_prefix = new ArrayList<>(), description = new ArrayList<>(), city = new ArrayList<>() , state = new ArrayList<>(),bathroom  = new ArrayList<>() ,bedroom = new ArrayList<>(),garage = new ArrayList<>(),size = new ArrayList<>(),size_postfix = new ArrayList<>(), image = new ArrayList<>(),
-    date = new ArrayList<>();
+            date = new ArrayList<>() , pstatus = new ArrayList<>(), locationlatlng = new ArrayList<>();
     RequestQueue rq  ;
     private Context mContext;
     int id1 = 0;
@@ -67,16 +67,25 @@ public class API extends AsyncTask<Void,Void,Void> {
             }
             JSONObject jObj = new JSONObject(data);
             for (int i = 0; i < data.length() ; i++) {
-                JSONObject jsonObject =jObj.getJSONObject(String.valueOf(i));
+                JSONObject jsonObject = jObj.getJSONObject(String.valueOf(i));
                 //JSONObject jsonObject = data.getJSONObject(String.valueOf(i));
                 //JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
-                if(jsonObject.has("_thumbnail_id")) {
-                    id.add((jsonObject.getString("_thumbnail_id")));
+                if (jsonObject.has("img"))
+                {
+                    image.add(jsonObject.getString("img"));
                 }
                 else {
-                    id.add("NA");
+                    image.add("NA");
                 }
+                if (jsonObject.has("pstatus"))
+                {
+                    pstatus.add(jsonObject.getString("pstatus"));
+                }
+                else {
+                    pstatus.add("NA");
+                }
+
                 if(jsonObject.has("ft_property_price")) {
                     price.add(jsonObject.getString("ft_property_price"));
                 }
@@ -89,8 +98,8 @@ public class API extends AsyncTask<Void,Void,Void> {
                 else {
                     price_prefix.add("NA");
                 }
-                if (jsonObject.has("name")) {
-                    description.add(jsonObject.getString("name"));
+                if (jsonObject.has("ptype")) {
+                    description.add(jsonObject.getString("ptype"));
                 }
                 else {
                     description.add("NULL");
@@ -137,18 +146,24 @@ public class API extends AsyncTask<Void,Void,Void> {
                 else {
                     size_postfix.add("NA");
                 }
-                if (jsonObject.has("img"))
-                {
-                    image.add(jsonObject.getString("img"));
-                }
-                else {
-                    image.add("NA");
-                }
+
                 if(jsonObject.has("date")){
                     date.add(jsonObject.getString("date"));
                 }
                 else {
                     date.add("NA");
+                }
+                if(jsonObject.has("_thumbnail_id")) {
+                    id.add((jsonObject.getString("_thumbnail_id")));
+                }
+                else {
+                    id.add("NA");
+                }
+                if (jsonObject.has("ft_property_location")){
+                    locationlatlng.add(jsonObject.getString("ft_property_location"));
+                }
+                else {
+                    locationlatlng.add("NA");
                 }
 
             }
